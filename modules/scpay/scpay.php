@@ -1,9 +1,9 @@
 <?php
 /**
-* Share Commerce Payment - Prestashop Plugin
+* SC Payments - Prestashop Plugin
 *
 * @package Payment Method
-* @author ShareCommerce
+* @author SCPayments
 *
 */
 use PrestaShop\PrestaShop\Core\Payment\PaymentOption;
@@ -19,8 +19,8 @@ class SCPay extends PaymentModule {
 		$this->name = 'scpay';
 		$this->tab = 'payments_gateways';
 		$this->version = '1.0.0';
-		$this->author = 'ShareCommerce';
-		$this->author_uri = 'https://github.com/share-commerce/Plugin.Prestashop.1.7.-';
+		$this->author = 'SCPayments';
+		$this->author_uri = 'https://github.com/Alpha-Fintech/Plugin.Prestashop.1.7.-';
 		$this->controllers = array('payment', 'validation');
 		$this->bout_valide = $this->l('Validate');        
 		$this->currencies = true;
@@ -36,14 +36,14 @@ class SCPay extends PaymentModule {
             $this->SCPAY_ENVIRONMENT = $config['SCPAY_ENVIRONMENT'];
 
 		parent::__construct();
-		$this->displayName = 'Share Commerce Payment';
+		$this->displayName = 'SC Payments';
 		$this->description = $this->l('We are digital payment platform strive to drive the market towards real digital payments and cashless market, connect agents, merchants and partners with the ease of our leading technologies and customizable modules.');
 		$this->confirmUninstall = $this->l('Are you sure you want to delete your details ?');
 
 		if(!count(Currency::checkPaymentCurrencies($this->id)))
 				$this->warning = $this->l('No currency set for this module');
 		if(!isset($this->SCPAY_MERCHANT_SKEY) || !isset($this->SCPAY_MERCHANT_ID))
-				$this->warning = $this->l('Your Share Commerce Payment account must be set correctly');
+				$this->warning = $this->l('Your SC Payments account must be set correctly');
 		if(!isset($this->SCPAY_ENVIRONMENT))
 				$this->warning = $this->l('This plugin required an environment type selected.');
 	}
@@ -121,7 +121,7 @@ class SCPay extends PaymentModule {
 			return;
 		
 		$newOption = new PaymentOption();
-		$newOption->setCallToActionText($this->trans('Share Commerce Payment', array(), 'Modules.SCPay.Shop'));
+		$newOption->setCallToActionText($this->trans('SC Payments', array(), 'Modules.SCPay.Shop'));
 		$newOption->setAction($this->context->link->getModuleLink($this->name, 'payment', array(), true));
 		
 		$payment_options = [

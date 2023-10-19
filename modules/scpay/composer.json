@@ -1,11 +1,11 @@
 {
   "name": "prestashop/scpay",
-  "description": "PrestaShop module - Share Commerce Payment",
-  "homepage": "https://github.com/share-commerce/Plugin.Prestashop.1.7.-",
+  "description": "PrestaShop module - SC Payments",
+  "homepage": "https://github.com/Alpha-Fintech/Plugin.Prestashop.1.7.-",
   "license": "AFL - Academic Free License (AFL 3.0)",
   "authors": [
     {
-      "name": "ShareCommerce",
+      "name": "SCPayments",
       "email": "temp@gmail.com"
     }
   ],
